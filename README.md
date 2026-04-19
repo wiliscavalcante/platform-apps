@@ -2,6 +2,22 @@
 
 Configuracoes reutilizaveis de componentes cross/plataforma.
 
-Neste primeiro passo, os values do Istio ainda estao inline no `platform-gitops` para facilitar o entendimento do Argo CD.
+O `platform-gitops` decide quais componentes entram em cada cluster. Este repositorio guarda os values e configuracoes consumidos por essas Applications.
 
-Depois vamos mover os values para este repositorio e usar multi-source no Argo CD.
+Estrutura inicial:
+
+```text
+istio/
+  values/
+    dev/
+    uat/
+    prod/
+```
+
+Cada ambiente tem values separados para:
+
+```text
+base.yaml
+istiod.yaml
+ingressgateway.yaml
+```
